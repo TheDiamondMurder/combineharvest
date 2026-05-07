@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gambling.jakublabs.xyz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="casino-page" aria-labelledby="page-title">
+      <section class="hero">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>gambling.jakublabs.xyz</span>
+        </div>
+
+        <h1 id="page-title">fake casino</h1>
+        <p class="lede">not real gambling, not real money, just fake coins and bad decisions</p>
+      </section>
+
+      <section class="disclaimer" aria-label="Responsible gambling disclaimer">
+        <strong>Disclaimer:</strong> This is not real gambling. Coins have no cash value.
+        Real gambling is risky and can be addictive. Always gamble responsibly if
+        you gamble for real, and never bet money you cannot afford to lose.
+      </section>
+
+      <section class="wallet">
+        <div>
+          <span>balance</span>
+          <strong id="balance">5,000</strong>
+        </div>
+        <div>
+          <span>daily bonus</span>
+          <strong id="bonus-timer">ready</strong>
+        </div>
+        <button class="button button-light" id="claim-bonus" type="button">Claim 1,000</button>
+      </section>
+
+      <section class="game-layout">
+        <aside class="game-menu" aria-label="Games">
+          <button class="game-tab active" data-game="blackjack" type="button">Blackjack</button>
+          <button class="game-tab" data-game="plinko" type="button">Plinko</button>
+          <button class="game-tab" data-game="rocket" type="button">Ride the Rocket</button>
+          <button class="game-tab" data-game="poker" type="button">Poker</button>
+          <button class="game-tab" data-game="slots" type="button">Slots</button>
+        </aside>
+
+        <section class="game-panel" aria-live="polite">
+          <div class="bet-row">
+            <label>
+              <span>bet</span>
+              <input id="bet" type="number" min="10" step="10" value="100" />
+            </label>
+            <p id="message">Pick a game and place a fake bet.</p>
+          </div>
+
+          <div class="game-view active" id="blackjack">
+            <h2>Blackjack</h2>
+            <div class="cards-table">
+              <div>
+                <span>dealer</span>
+                <div class="cards" id="dealer-cards"></div>
+              </div>
+              <div>
+                <span>you</span>
+                <div class="cards" id="player-cards"></div>
+              </div>
+            </div>
+            <div class="actions">
+              <button class="button button-light" id="blackjack-deal" type="button">Deal</button>
+              <button class="button button-dark" id="blackjack-hit" type="button">Hit</button>
+              <button class="button button-dark" id="blackjack-stand" type="button">Stand</button>
+            </div>
+          </div>
+
+          <div class="game-view" id="plinko">
+            <h2>Plinko</h2>
+            <div class="plinko-stage" id="plinko-stage">
+              <div class="plinko-board" id="plinko-board"></div>
+              <div class="plinko-ball" id="plinko-ball"></div>
+            </div>
+            <button class="button button-light" id="drop-plinko" type="button">Drop Ball</button>
+          </div>
+
+          <div class="game-view" id="rocket">
+            <h2>ride the rocket</h2>
+            <div class="rocket-screen">
+              <span id="rocket-multiplier">1.00x</span>
+              <div class="rocket" id="rocket-ship"></div>
+            </div>
+            <div class="actions">
+              <button class="button button-light" id="rocket-start" type="button">Launch</button>
+              <button class="button button-dark" id="rocket-cashout" type="button">Cash Out</button>
+            </div>
+          </div>
+
+          <div class="game-view" id="poker">
+            <h2>draw poker</h2>
+            <div class="cards poker-hand" id="poker-hand"></div>
+            <button class="button button-light" id="poker-deal" type="button">Deal Hand</button>
+          </div>
+
+          <div class="game-view" id="slots">
+            <h2>Slots</h2>
+            <div class="slots-reels" id="slots-reels">
+              <span>7</span><span>7</span><span>7</span>
+            </div>
+            <button class="button button-light" id="spin-slots" type="button">Spin</button>
+          </div>
+        </section>
+      </section>
+
+      <div class="single-action">
+        <button class="button button-light" id="generate-money-graphic" type="button">
+          Download Balance Graphic
+        </button>
+        <canvas id="money-canvas" width="1200" height="1200" hidden></canvas>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
